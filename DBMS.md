@@ -26,7 +26,7 @@ INSERT INTO Region_Sales (Region, Product, Sales_Amount, Year) VALUES
 ('North America', 'Watch', 1700, 2024);
 ```
 ---
-```
+```sql
 CREATE TABLE STU_INFO (
     Rno INT PRIMARY KEY,
     Name VARCHAR(50),
@@ -43,7 +43,7 @@ INSERT INTO STU_INFO (Rno, Name, Branch) VALUES
 
 ```
 ---
-```
+```sql
 CREATE TABLE RESULT (
     Rno INT,
     SPI DECIMAL(3,1),
@@ -59,7 +59,7 @@ INSERT INTO RESULT (Rno, SPI) VALUES
 (107, 8.9);
 ```
 ---
-```
+```sql
 CREATE TABLE EMPLOYEE_MASTER (
     EmployeeNo VARCHAR(10) PRIMARY KEY,
     Name VARCHAR(50),
@@ -76,7 +76,7 @@ INSERT INTO EMPLOYEE_MASTER (EmployeeNo, Name, ManagerNo) VALUES
 
 ```
 ---
-```
+```sql
 CREATE TABLE Person_v1 (
     PersonID INT PRIMARY KEY,
     PersonName VARCHAR(100),
@@ -99,7 +99,7 @@ INSERT INTO Person_v1 (PersonID, PersonName, DepartmentID, Salary, JoiningDate, 
 (110, 'Mohit Maru', 5, 14000, '2000-05-25', 'Jamnagar');
 ```
 ---
-```
+```sql
 CREATE TABLE Department_v1 (
     DepartmentID INT PRIMARY KEY,
     DepartmentName VARCHAR(50),
@@ -115,7 +115,7 @@ INSERT INTO Department_v1 (DepartmentID, DepartmentName, DepartmentCode, Locatio
 (5, 'Mechanical', 'ME', 'B-Block');
 ```
 ---
-```
+```sql
 CREATE TABLE Person_v2 (
     PersonID INT PRIMARY KEY,
     FirstName VARCHAR(50),
@@ -136,7 +136,7 @@ INSERT INTO Person_v2 (PersonID, FirstName, LastName, Salary, JoiningDate, Depar
 (107, 'Neha', 'Trivedi', 18000, '2014-02-20', 3, 15);
 ```
 ---
-```
+```sql
 CREATE TABLE Department_v2 (
     DepartmentID INT PRIMARY KEY,
     DepartmentName VARCHAR(50)
@@ -149,7 +149,7 @@ INSERT INTO Department_v2 (DepartmentID, DepartmentName) VALUES
 (4, 'Account');
 ```
 ---
-```
+```sql
 CREATE TABLE Designation (
     DesignationID INT PRIMARY KEY,
     DesignationName VARCHAR(50)
