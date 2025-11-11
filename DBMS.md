@@ -1,7 +1,6 @@
 # Practical SQL Task
 
-This file defines all SQL tables extracted from the provided document, along with realistic `CREATE TABLE` and `INSERT INTO` statements.
-
+Design Database from below reference and perform given queries.
 ---
 
 ## 1️⃣ Table: Region_Sales
