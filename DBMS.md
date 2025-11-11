@@ -3,8 +3,6 @@
 Design Database from below reference and perform given queries.
 ---
 
-## 1️⃣ Table: Region_Sales
-
 ```sql
 CREATE TABLE Region_Sales (
     Region VARCHAR(50),
