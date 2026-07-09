@@ -38,10 +38,10 @@ ON p.CategoryID = c.CategoryID;
 ---
 
 # B) With Aggregation (2 Queries)
+
+## 1. Number of orders placed by each customer.
 <details>
 <summary>Solution</summary>
-## 1. Number of orders placed by each customer.
-
 ```sql
 SELECT
     c.CustomerName,
@@ -123,7 +123,8 @@ Customers → Orders → OrderItems
 # A) Without Aggregation
 
 ## 1.
-
+<details>
+<summary>Solution</summary>
 ```sql
 SELECT
     c.CustomerName,
@@ -137,11 +138,13 @@ ON c.CustomerID=o.CustomerID
 JOIN OrderItems oi
 ON o.OrderID=oi.OrderID;
 ```
+</details>
 
 ---
 
 ## 2.
-
+<details>
+<summary>Solution</summary>
 ```sql
 SELECT
     c.CustomerName,
@@ -154,13 +157,14 @@ ON c.CustomerID=o.CustomerID
 JOIN OrderItems oi
 ON o.OrderID=oi.OrderID;
 ```
-
+</details>
 ---
 
 # B) With Aggregation
 
 ## 1. Total quantity purchased by each customer.
-
+<details>
+<summary>Solution</summary>
 ```sql
 SELECT
     c.CustomerName,
@@ -174,11 +178,12 @@ ON o.OrderID=oi.OrderID
 
 GROUP BY c.CustomerName;
 ```
-
+</details>
 ---
 
 ## 2. Number of products in each order.
-
+<details>
+<summary>Solution</summary>
 ```sql
 SELECT
     o.OrderID,
@@ -192,13 +197,14 @@ ON o.OrderID=oi.OrderID
 
 GROUP BY o.OrderID;
 ```
-
+</details>
 ---
 
 # C) CTE + Window
 
 ## 1.
-
+<details>
+<summary>Solution</summary>
 ```sql
 WITH CustomerQty AS
 (
@@ -220,11 +226,12 @@ SELECT *,
 ROW_NUMBER() OVER(ORDER BY Qty DESC)
 FROM CustomerQty;
 ```
-
+</details>
 ---
 
 ## 2.
-
+<details>
+<summary>Solution</summary>
 ```sql
 SELECT
 c.CustomerName,
@@ -243,7 +250,7 @@ ON c.CustomerID=o.CustomerID
 JOIN OrderItems oi
 ON o.OrderID=oi.OrderID;
 ```
-
+</details>
 ---
 
 # 📘 LEVEL 3 — 4 TABLE JOINS
@@ -253,7 +260,8 @@ Customers → Orders → OrderItems → Products
 ---
 
 # A) Without Aggregation
-
+<details>
+<summary>Solution</summary>
 ## 1.
 
 ```sql
@@ -274,11 +282,12 @@ ON o.OrderID=oi.OrderID
 JOIN Products p
 ON oi.ProductID=p.ProductID;
 ```
-
+</details>
 ---
 
 ## 2.
-
+<details>
+<summary>Solution</summary>
 ```sql
 SELECT
 c.CustomerName,
@@ -297,13 +306,14 @@ ON o.OrderID=oi.OrderID
 JOIN Products p
 ON oi.ProductID=p.ProductID;
 ```
-
+</details>
 ---
 
 # B) Aggregation
 
 ## 1.
-
+<details>
+<summary>Solution</summary>
 ```sql
 SELECT
 c.CustomerName,
@@ -322,11 +332,12 @@ ON oi.ProductID=p.ProductID
 
 GROUP BY c.CustomerName;
 ```
-
+</details>
 ---
 
 ## 2.
-
+<details>
+<summary>Solution</summary>
 ```sql
 SELECT
 p.ProductName,
@@ -345,13 +356,14 @@ ON o.CustomerID=c.CustomerID
 
 GROUP BY p.ProductName;
 ```
-
+</details>
 ---
 
 # C) CTE + Window
 
 ## 1.
-
+<details>
+<summary>Solution</summary>
 ```sql
 WITH Sales AS
 (
@@ -377,11 +389,12 @@ SELECT *,
 DENSE_RANK() OVER(ORDER BY Amount DESC)
 FROM Sales;
 ```
-
+</details>
 ---
 
 ## 2.
-
+<details>
+<summary>Solution</summary>
 ```sql
 SELECT
 c.CustomerName,
@@ -403,7 +416,7 @@ ON o.OrderID=oi.OrderID
 JOIN Products p
 ON oi.ProductID=p.ProductID;
 ```
-
+</details>
 ---
 
 # 📘 LEVEL 4 — 5 TABLE JOINS
@@ -415,7 +428,8 @@ Customers → Orders → OrderItems → Products → Categories
 # A) Without Aggregation
 
 ## 1.
-
+<details>
+<summary>Solution</summary>
 ```sql
 SELECT
 c.CustomerName,
@@ -437,11 +451,12 @@ ON oi.ProductID=p.ProductID
 JOIN Categories cat
 ON p.CategoryID=cat.CategoryID;
 ```
-
+</details>
 ---
 
 ## 2.
-
+<details>
+<summary>Solution</summary>
 ```sql
 SELECT
 o.OrderID,
@@ -464,13 +479,14 @@ ON oi.ProductID=p.ProductID
 JOIN Categories cat
 ON p.CategoryID=cat.CategoryID;
 ```
-
+</details>
 ---
 
 # B) Aggregation
 
 ## 1.
-
+<details>
+<summary>Solution</summary>
 ```sql
 SELECT
 cat.CategoryName,
@@ -492,11 +508,12 @@ ON o.CustomerID=c.CustomerID
 
 GROUP BY cat.CategoryName;
 ```
-
+</details>
 ---
 
 ## 2.
-
+<details>
+<summary>Solution</summary>
 ```sql
 SELECT
 c.CustomerName,
@@ -521,13 +538,14 @@ GROUP BY
 c.CustomerName,
 cat.CategoryName;
 ```
-
+</details>
 ---
 
 # C) CTE + Window
 
 ## 1. Highest spending customer in each category.
-
+<details>
+<summary>Solution</summary>
 ```sql
 WITH CustomerSales AS
 (
@@ -564,11 +582,12 @@ ORDER BY Amount DESC
 
 FROM CustomerSales;
 ```
-
+</details>
 ---
 
 ## 2. Running sales total by category.
-
+<details>
+<summary>Solution</summary>
 ```sql
 SELECT
 cat.CategoryName,
@@ -599,3 +618,4 @@ GROUP BY
 cat.CategoryName,
 c.CustomerName;
 ```
+</details>
