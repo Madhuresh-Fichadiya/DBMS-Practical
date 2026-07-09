@@ -4,7 +4,7 @@
 
 ---
 
-# A) Without Aggregation (2 Queries)
+# A) Without Aggregation 
 
 ## 1. Display customer details with their orders.
 
@@ -37,7 +37,7 @@ ON p.CategoryID = c.CategoryID;
  
 ---
 
-# B) With Aggregation (2 Queries)
+# B) With Aggregation 
 
 ## 1. Number of orders placed by each customer.
 
@@ -69,7 +69,7 @@ GROUP BY c.CategoryName;
  
 ---
 
-# C) CTE + Window Functions (2 Queries)
+# C) CTE + Window Functions 
 
 ## 1. Rank customers based on number of orders.
 
