@@ -360,7 +360,7 @@ GROUP BY p.ProductName;
 
 # C) CTE + Window
 
-## 1.
+## 1. Calculate the total amount spent by each customer and rank them from the highest spender to the lowest using DENSE_RANK(). OR Display the total purchase amount of each customer along with their spending rank.
  
  
 ```sql
@@ -391,7 +391,7 @@ FROM Sales;
  
 ---
 
-## 2.Calculate the total amount spent by each customer and rank them from the highest spender to the lowest using DENSE_RANK(). OR Display the total purchase amount of each customer along with their spending rank.
+## 2. For each purchased product, display the customer name, product name, product price, and the average price of products purchased by that customer without using GROUP BY.
  
  
 ```sql
