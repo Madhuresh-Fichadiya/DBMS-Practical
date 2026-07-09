@@ -122,7 +122,7 @@ Customers → Orders → OrderItems
 
 # A) Without Aggregation
 
-## 1.
+## 1. Display the details of each order, including the customer name, product ID, and quantity ordered.
  
  
 ```sql
@@ -142,7 +142,7 @@ ON o.OrderID=oi.OrderID;
 
 ---
 
-## 2.
+## 2. Display the customer name, order date, and quantity of each product ordered.
  
  
 ```sql
@@ -183,7 +183,6 @@ GROUP BY c.CustomerName;
 
 ## 2. Number of products in each order.
  
- 
 ```sql
 SELECT
     o.OrderID,
@@ -202,7 +201,7 @@ GROUP BY o.OrderID;
 
 # C) CTE + Window
 
-## 1.
+## 1. Display the customers ranked based on the total quantity of products they have purchased.
  
  
 ```sql
@@ -229,7 +228,7 @@ FROM CustomerQty;
  
 ---
 
-## 2.
+## 2. Display the customer name, order date, quantity of each order item, and the total quantity of products purchased by each customer using a window function.
  
  
 ```sql
@@ -262,7 +261,7 @@ Customers → Orders → OrderItems → Products
 # A) Without Aggregation
  
  
-## 1.
+## 1. Display the customer name, order ID, product name, and quantity for each product ordered by every customer.
 
 ```sql
 SELECT
@@ -285,7 +284,7 @@ ON oi.ProductID=p.ProductID;
  
 ---
 
-## 2.
+## 2. Retrieve the details of each purchase, including the customer name, order date, product name, and product price.
  
  
 
@@ -311,7 +310,7 @@ ON oi.ProductID=p.ProductID;
 
 # B) Aggregation
 
-## 1.
+## 1. Display the total purchase amount for each customer. OR Calculate the total amount spent by each customer based on the quantity of products purchased and their prices.
  
  
 ```sql
@@ -335,7 +334,7 @@ GROUP BY c.CustomerName;
  
 ---
 
-## 2.
+## 2. Display the total quantity sold for each product. OR Calculate the total number of units sold for each product across all customer orders.
  
  
 ```sql
@@ -392,7 +391,7 @@ FROM Sales;
  
 ---
 
-## 2.
+## 2.Calculate the total amount spent by each customer and rank them from the highest spender to the lowest using DENSE_RANK(). OR Display the total purchase amount of each customer along with their spending rank.
  
  
 ```sql
@@ -427,7 +426,7 @@ Customers → Orders → OrderItems → Products → Categories
 
 # A) Without Aggregation
 
-## 1.
+## 1. Display the customer name, product name, category name, and quantity for each product purchased by every customer. OR Retrieve the details of each purchase, including the customer name, product name, product category, and quantity ordered.
  
  
 ```sql
@@ -454,7 +453,7 @@ ON p.CategoryID=cat.CategoryID;
  
 ---
 
-## 2.
+## 2. Retrieve the complete order details, including the order ID, customer name, product category, product name, and product price.
  
  
 ```sql
@@ -484,7 +483,7 @@ ON p.CategoryID=cat.CategoryID;
 
 # B) Aggregation
 
-## 1.
+## 1. Display the total revenue for each category based on the quantity of products sold and their prices.
  
  
 ```sql
@@ -511,7 +510,7 @@ GROUP BY cat.CategoryName;
  
 ---
 
-## 2.
+## 2. Calculate the category-wise spending of each customer based on the quantity of products purchased and their prices.
  
  
 ```sql
