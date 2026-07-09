@@ -7,7 +7,8 @@
 # A) Without Aggregation (2 Queries)
 
 ## 1. Display customer details with their orders.
-
+<details>
+<summary>Solution</summary>
 ```sql
 SELECT
     c.CustomerID,
@@ -18,11 +19,12 @@ FROM Customers c
 JOIN Orders o
 ON c.CustomerID = o.CustomerID;
 ```
-
+</details>
 ---
 
 ## 2. Display product name with category.
-
+<details>
+<summary>Solution</summary>
 ```sql
 SELECT
     p.ProductName,
@@ -32,11 +34,12 @@ FROM Products p
 JOIN Categories c
 ON p.CategoryID = c.CategoryID;
 ```
-
+</details>
 ---
 
 # B) With Aggregation (2 Queries)
-
+<details>
+<summary>Solution</summary>
 ## 1. Number of orders placed by each customer.
 
 ```sql
@@ -48,11 +51,12 @@ LEFT JOIN Orders o
 ON c.CustomerID = o.CustomerID
 GROUP BY c.CustomerName;
 ```
-
+</details>
 ---
 
 ## 2. Average product price in each category.
-
+<details>
+<summary>Solution</summary>
 ```sql
 SELECT
     c.CategoryName,
@@ -62,11 +66,12 @@ JOIN Products p
 ON c.CategoryID = p.CategoryID
 GROUP BY c.CategoryName;
 ```
-
+</details>
 ---
 
 # C) CTE + Window Functions (2 Queries)
-
+<details>
+<summary>Solution</summary>
 ## 1. Rank customers based on number of orders.
 
 ```sql
@@ -85,11 +90,12 @@ SELECT *,
 DENSE_RANK() OVER(ORDER BY TotalOrders DESC) Ranking
 FROM CustomerOrders;
 ```
-
+</details>
 ---
 
 ## 2. Rank products by price within category.
-
+<details>
+<summary>Solution</summary>
 ```sql
 SELECT
     p.ProductName,
@@ -105,7 +111,7 @@ FROM Products p
 JOIN Categories c
 ON p.CategoryID=c.CategoryID;
 ```
-
+</details>
 ---
 
 # 📘 LEVEL 2 — 3 TABLE JOINS
