@@ -1,9 +1,3 @@
-This is an excellent learning path. It progresses exactly the way SQL is used in real projects and interviews.
-
-> **Note:** In your schema there are only **5 tables**, but **Orders → Customers** and **Products → Categories** are separate relationship chains. Therefore, a true **5-table join** naturally involves:
->
-> `Customers → Orders → OrderItems → Products → Categories`
-
 ---
 
 # 📘 LEVEL 1 — 2 TABLE JOINS
