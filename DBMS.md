@@ -70,10 +70,10 @@ GROUP BY c.CategoryName;
 ---
 
 # C) CTE + Window Functions (2 Queries)
+
+## 1. Rank customers based on number of orders.
 <details>
 <summary>Solution</summary>
-## 1. Rank customers based on number of orders.
-
 ```sql
 WITH CustomerOrders AS
 (
@@ -288,7 +288,7 @@ ON oi.ProductID=p.ProductID;
 ## 2.
 <details>
 <summary>Solution</summary>
-```sql
+
 SELECT
 c.CustomerName,
 o.OrderDate,
@@ -305,7 +305,7 @@ ON o.OrderID=oi.OrderID
 
 JOIN Products p
 ON oi.ProductID=p.ProductID;
-```
+
 </details>
 ---
 
